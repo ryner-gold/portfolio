@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+.wanted-poster-container {
+    margin-bottom: 3rem;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+}
+
+.wanted-poster {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    /* Old paper color */
+    background: #d4c5a0 repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(139, 105, 20, 0.03) 10px,
+            rgba(139, 105, 20, 0.03) 20px
+    );
+    border: 3px solid #c27820;
+    box-shadow: inset 0 0 40px rgba(139, 105, 20, 0.2),
+    0 0 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.poster-background {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    filter: sepia(98%) contrast(2.2);
+}
+
+.poster-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wanted-text {
+    position: relative;
+    text-align: center;
+    font-family: 'Rye', serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin: 20px 0;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 0 rgba(139, 105, 20, 0.3),
+    4px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Bullet holes */
+.bullet-hole {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8),
+    0 0 0 2px rgba(139, 105, 20, 0.5);
+}
+
+.bullet-hole::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: radial-gradient(
+            circle,
+            transparent 30%,
+            rgba(139, 105, 20, 0.3) 50%,
+            transparent 70%
+    );
+    filter: blur(2px);
+}
+
+.hole-1 {
+    top: 60px;
+    right: 30px;
+    transform: rotate(45deg);
+}
+
+.hole-2 {
+    bottom: 80px;
+    left: 40px;
+    transform: rotate(-30deg);
+}
+
+.hole-3 {
+    top: 45%;
+    right: 20px;
+    transform: rotate(15deg);
+}
+
+/* Torn paper edges */
+.torn-edge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: #242424; /* Match your app background */
+    z-index: 10;
+}
+
+.torn-edge.top {
+    top: -5px;
+    clip-path: polygon(
+            0% 0%, 3% 100%, 7% 0%, 10% 100%, 13% 0%,
+            17% 100%, 20% 0%, 23% 100%, 27% 0%, 30% 100%,
+            33% 0%, 37% 100%, 40% 0%, 43% 100%, 47% 0%,
+            50% 100%, 53% 0%, 57% 100%, 60% 0%, 63% 100%,
+            67% 0%, 70% 100%, 73% 0%, 77% 100%, 80% 0%,
+            83% 100%, 87% 0%, 90% 100%, 93% 0%, 97% 100%, 100% 0%
+    );
+}
+
+.torn-edge.bottom {
+    bottom: -5px;
+    transform: rotate(180deg);
+    clip-path: polygon(
+            0% 0%, 3% 100%, 7% 0%, 10% 100%, 13% 0%,
+            17% 100%, 20% 0%, 23% 100%, 27% 0%, 30% 100%,
+            33% 0%, 37% 100%, 40% 0%, 43% 100%, 47% 0%,
+            50% 100%, 53% 0%, 57% 100%, 60% 0%, 63% 100%,
+            67% 0%, 70% 100%, 73% 0%, 77% 100%, 80% 0%,
+            83% 100%, 87% 0%, 90% 100%, 93% 0%, 97% 100%, 100% 0%
+    );
+}
+
+/* Subtle animation */
+@keyframes sway {
+    0%, 100% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(-1deg);
+    }
+}
+
+.wanted-poster-container {
+    animation: sway 6s ease-in-out infinite;
+}

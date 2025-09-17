@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Bungee&family=Black+Ops+One&display=swap');
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-text {
+    position: relative;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin: 0 0 3rem 0;
+    user-select: none;
+    font-family: 'Rye', serif;
+    text-transform: uppercase;
+}
+
+.text-bg {
+    color: #22221C;
+    opacity: 0.3;
+    /* Add subtle outline to background text */
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.3);
+    text-stroke: 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #c27820;
+    overflow: hidden;
+    white-space: nowrap;
+    will-change: width;
+    /* Add strong outline to make it pop */
+    -webkit-text-stroke: 3px #1a1a1a;
+    text-stroke: 3px #1a1a1a;
+    paint-order: stroke fill;
+    text-shadow: 3px 3px 0 #1a1a1a,
+    -1px -1px 0 #1a1a1a,
+    1px -1px 0 #1a1a1a,
+    -1px 1px 0 #1a1a1a,
+    4px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.loading-subtitle {
+    color: rgba(255, 255, 255, 0.9); /* Increased opacity */
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    line-height: 1.8;
+    text-align: center;
+    font-family: 'Rye', serif;
+    font-size: 0.9rem;
+    /* Add subtle outline to subtitle too */
+    text-shadow: 2px 2px 0 #1a1a1a,
+    -1px -1px 0 #1a1a1a,
+    1px -1px 0 #1a1a1a,
+    -1px 1px 0 #1a1a1a,
+    3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.loading-subtitle div {
+    font-size: 1rem;
+}
